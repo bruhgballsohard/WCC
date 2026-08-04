@@ -125,7 +125,7 @@
           </p>
         </div>
 
-        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/40">
+        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/40" id="newsletter-card" data-sheet-url="https://script.google.com/macros/s/AKfycbx_NEWSLETTER_SUBSCRIBERS/exec">
           <h3 class="text-headline-md text-on-surface mb-2 flex items-center gap-2">
             <span class="material-symbols-outlined text-primary">mail</span>
             <span>Join Our Mailing List</span>
@@ -134,13 +134,24 @@
             materials, and member events.</p>
 
           <form id="newsletter-form" class="flex flex-col gap-3">
-            <input type="email" required placeholder="University Email Address"
+            <input type="email" id="newsletter-email" required placeholder="University Email Address"
               class="w-full bg-surface-container-lowest border border-outline-variant focus:border-primary focus:outline-none px-4 py-3 text-body-md rounded-lg" />
-            <button type="submit"
-              class="btn-outline w-full justify-center text-center uppercase tracking-wider font-bold">
-              Subscribe
+            <button type="submit" id="newsletter-submit-btn"
+              class="btn-primary w-full justify-center text-center uppercase tracking-wider font-bold">
+              Subscribe & Send to Google Sheet
             </button>
           </form>
+
+          <div class="flex items-center justify-between text-xs text-primary font-bold mt-3 pt-3 border-t border-outline-variant/30">
+            <span class="flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">table_view</span>
+              <span>Target: Newsletter_Subscribers</span>
+            </span>
+            <button type="button" class="btn-config-sheet text-xs text-secondary hover:underline flex items-center gap-0.5">
+              <span class="material-symbols-outlined text-sm">settings</span>
+              <span>Sheet URL</span>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -229,6 +240,18 @@
       </div>
     </div>
   </footer>
+
+  <!-- Modal Backdrop & Dialog Container -->
+  <div id="modal-backdrop" class="modal-backdrop">
+    <div class="modal-content">
+      <div class="flex justify-between items-center pb-4 mb-4 border-b border-outline-variant">
+        <h3 id="modal-title" class="text-headline-md text-on-surface">Google Sheet Settings</h3>
+        <button id="close-modal-btn" class="text-outline hover:text-on-surface p-1"><span
+            class="material-symbols-outlined">close</span></button>
+      </div>
+      <div id="modal-body-content"></div>
+    </div>
+  </div>
 
   <script src="js/app.js"></script>
 </body>
