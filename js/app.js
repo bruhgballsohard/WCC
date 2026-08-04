@@ -124,8 +124,8 @@ function initModalSystem() {
   document.querySelectorAll('.btn-config-sheet').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      const card = e.target.closest('article') || e.target.closest('.event-card');
-      const title = card ? card.querySelector('h3').textContent : 'Event';
+      const card = e.target.closest('article') || e.target.closest('.event-card') || e.target.closest('#newsletter-card');
+      const title = card ? (card.querySelector('h3') ? card.querySelector('h3').textContent : 'Mailing List') : 'Newsletter';
       const currentUrl = card ? (card.dataset.sheetUrl || '') : '';
 
       const modalHtml = `
@@ -355,8 +355,62 @@ function initForms() {
   if (newsletterForm) {
     newsletterForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      showToast('Subscribed to White Coat Collective updates!', 'notifications_active');
-      newsletterForm.reset();
+
+      const emailInput = document.getElementById('newsletter-email');
+      const submitBtn = document.getElementById('newsletter-submit-btn');
+      const card = document.getElementById('newsletter-card');
+
+      const email = emailInput ? emailInput.value.trim() : '';
+      if (!email) return;
+
+      const sheetUrl = card ? (card.dataset.sheetUrl || '') : '';
+      const sheetTarget = 'Newsletter_Subscribers';
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+          <span class="material-symbols-outlined animate-spin text-base">sync</span>
+          <span>Sending to Google Sheet...</span>
+        `;
+      }
+
+      const payload = {
+        eventTitle: 'Mailing List Subscription',
+        name: 'Subscriber',
+        email: email,
+        academicYear: 'N/A',
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        sheetTarget: sheetTarget,
+        sheetUrl: sheetUrl || 'https://script.google.com/macros/s/AKfycbx_NEWSLETTER_SUBSCRIBERS/exec'
+      };
+
+      // Send to Google Sheet Webhook endpoint
+      try {
+        if (sheetUrl) {
+          fetch(sheetUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          }).catch(err => console.log('Newsletter sheet webhook error: ', err));
+        }
+      } catch (err) {
+        console.log('Webhook error: ', err);
+      }
+
+      // Record in local log history
+      const logs = JSON.parse(localStorage.getItem('wcc_rsvp_logs') || '[]');
+      logs.unshift(payload);
+      localStorage.setItem('wcc_rsvp_logs', JSON.stringify(logs));
+
+      setTimeout(() => {
+        showToast(`Subscribed! ${email} sent to Google Sheet: ${sheetTarget}`, 'mark_email_read');
+        if (emailInput) emailInput.value = '';
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = `Subscribe & Send to Google Sheet`;
+        }
+      }, 500);
     });
   }
 }
