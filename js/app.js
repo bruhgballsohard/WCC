@@ -358,19 +358,17 @@ function initForms() {
 
       const emailInput = document.getElementById('newsletter-email');
       const submitBtn = document.getElementById('newsletter-submit-btn');
-      const card = document.getElementById('newsletter-card');
 
       const email = emailInput ? emailInput.value.trim() : '';
       if (!email) return;
 
-      const sheetUrl = card ? (card.dataset.sheetUrl || '') : '';
-      const sheetTarget = 'Newsletter_Subscribers';
+      const sheetUrl = 'https://script.google.com/macros/s/AKfycbzCsE_RPOTaXg2fQynNtE08IALvoyQPGdL4bOXC_yIwOhCQrK2ROZSthRcgtyzRnLexuQ/exec';
 
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.innerHTML = `
           <span class="material-symbols-outlined animate-spin text-base">sync</span>
-          <span>Sending to Google Sheet...</span>
+          <span>Subscribing...</span>
         `;
       }
 
@@ -380,20 +378,18 @@ function initForms() {
         email: email,
         academicYear: 'N/A',
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-        sheetTarget: sheetTarget,
-        sheetUrl: sheetUrl || 'https://script.google.com/macros/s/AKfycbx_NEWSLETTER_SUBSCRIBERS/exec'
+        sheetTarget: 'Newsletter_Subscribers',
+        sheetUrl: sheetUrl
       };
 
       // Send to Google Sheet Webhook endpoint
       try {
-        if (sheetUrl) {
-          fetch(sheetUrl, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-          }).catch(err => console.log('Newsletter sheet webhook error: ', err));
-        }
+        fetch(sheetUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(err => console.log('Newsletter sheet webhook error: ', err));
       } catch (err) {
         console.log('Webhook error: ', err);
       }
@@ -404,11 +400,11 @@ function initForms() {
       localStorage.setItem('wcc_rsvp_logs', JSON.stringify(logs));
 
       setTimeout(() => {
-        showToast(`Subscribed! ${email} sent to Google Sheet: ${sheetTarget}`, 'mark_email_read');
+        showToast('Thank you for subscribing! Your email has been registered.', 'mark_email_read');
         if (emailInput) emailInput.value = '';
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.innerHTML = `Subscribe & Send to Google Sheet`;
+          submitBtn.innerHTML = `Subscribe`;
         }
       }, 500);
     });
