@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - White Coat Collective</title>
+  <meta name="description"
+    content="Get in touch with the White Coat Collective team for inquiries, resource access, or partnership opportunities." />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#005da7',
+            'primary-container': '#2976c7',
+            'primary-fixed': '#d4e3ff',
+            'primary-fixed-dim': '#a4c9ff',
+            'on-primary': '#ffffff',
+            'on-primary-fixed': '#001c39',
+            secondary: '#406183',
+            'secondary-fixed': '#d0e4ff',
+            'on-secondary-fixed': '#001d35',
+            tertiary: '#465d81',
+            'tertiary-fixed': '#d5e3ff',
+            surface: '#f8f9fa',
+            'surface-container': '#edeeef',
+            'surface-container-low': '#f3f4f5',
+            'surface-container-lowest': '#ffffff',
+            'on-surface': '#191c1d',
+            'on-surface-variant': '#414751',
+            outline: '#717783',
+            'outline-variant': '#c1c7d3',
+          },
+          fontFamily: {
+            display: ['"Hanken Grotesk"', 'sans-serif'],
+            headline: ['"Hanken Grotesk"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col">
+
+  <!-- Navigation Header -->
+  <header class="header-nav bg-surface-container-lowest border-b border-outline-variant sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 h-20 flex justify-between items-center">
+      <a href="index.html"
+        class="flex items-center gap-2 text-headline-md font-bold text-on-surface hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-primary text-3xl"
+          style="font-variation-settings: 'FILL' 1;">medical_services</span>
+        <span>White Coat Collective</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex gap-8 items-center h-full">
+        <a href="index.html" class="nav-link">Resources Hub</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="events.html" class="nav-link">Events</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+
+      <div class="hidden md:flex items-center">
+        <a href="contact.html" class="btn-primary">Join the Collective</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-on-surface p-2 mobile-menu-btn" aria-label="Toggle Navigation">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <aside id="mobile-drawer" class="mobile-drawer">
+    <div class="flex justify-between items-center pb-4 border-b border-outline-variant">
+      <span class="font-headline text-lg font-bold text-on-surface">Menu</span>
+      <button id="close-drawer-btn" class="text-outline p-1"><span
+          class="material-symbols-outlined">close</span></button>
+    </div>
+    <nav class="flex flex-col gap-4">
+      <a href="index.html" class="text-on-surface-variant hover:text-primary">Resources Hub</a>
+      <a href="about.html" class="text-on-surface-variant hover:text-primary">About Us</a>
+      <a href="events.html" class="text-on-surface-variant hover:text-primary">Events</a>
+      <a href="contact.html" class="text-primary font-bold">Contact</a>
+    </nav>
+    <div class="mt-auto pt-4 border-t border-outline-variant">
+      <a href="contact.html" class="btn-primary w-full text-center">Join the Collective</a>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main
+    class="flex-grow flex flex-col items-center justify-center py-12 md:py-20 px-6 md:px-12 w-full max-w-7xl mx-auto">
+
+    <div
+      class="w-full max-w-5xl bg-surface-container-lowest shadow-md rounded-2xl p-8 md:p-14 border border-outline-variant/50 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+
+      <!-- Left Side: Info & Newsletter -->
+      <div class="flex flex-col justify-between gap-8">
+        <div>
+          <span class="badge badge-secondary mb-3">Connect With Us</span>
+          <h1 class="text-display text-on-surface mb-4">Get in Touch.</h1>
+          <p class="text-body-lg text-on-surface-variant">
+            Whether you have a question about our study resources, want to collaborate on research, or want to join the
+            collective, we're here to support your journey.
+          </p>
+        </div>
+
+        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/40">
+          <h3 class="text-headline-md text-on-surface mb-2 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">mail</span>
+            <span>Join Our Mailing List</span>
+          </h3>
+          <p class="text-body-md text-on-surface-variant mb-4">Stay updated on suture workshops, new MCAT prep
+            materials, and member events.</p>
+
+          <form id="newsletter-form" class="flex flex-col gap-3">
+            <input type="email" required placeholder="University Email Address"
+              class="w-full bg-surface-container-lowest border border-outline-variant focus:border-primary focus:outline-none px-4 py-3 text-body-md rounded-lg" />
+            <button type="submit"
+              class="btn-outline w-full justify-center text-center uppercase tracking-wider font-bold">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Right Side: Community Links (Discord, Instagram, Campus Groups) -->
+      <div class="flex flex-col justify-center gap-5">
+        <h2 class="text-headline-lg text-on-surface mb-2">Connect Across Platforms</h2>
+
+        <!-- Discord Card -->
+        <a href="https://discord.gg/wKhtQCXqAz" target="_blank" rel="noopener noreferrer"
+          class="clinical-card group p-5 hover:border-primary transition-all flex flex-row items-center gap-4 text-left no-underline">
+          <div
+            class="bg-[#5865F2]/10 text-[#5865F2] p-3.5 rounded-xl group-hover:bg-[#5865F2] group-hover:text-white transition-colors">
+            <span class="material-symbols-outlined text-3xl">forum</span>
+          </div>
+          <div class="flex-grow">
+            <h3
+              class="text-headline-md text-on-surface text-lg group-hover:text-primary transition-colors flex items-center justify-between">
+              <span>Discord Community</span>
+              <span
+                class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-xl">open_in_new</span>
+            </h3>
+            <p class="text-body-md text-on-surface-variant text-sm mt-0.5">Chat with pre-med peers, join study rooms,
+              and ask questions 24/7.</p>
+          </div>
+        </a>
+
+        <!-- Instagram Card -->
+        <a href="https://www.instagram.com/ucdwcc/" target="_blank" rel="noopener noreferrer"
+          class="clinical-card group p-5 hover:border-primary transition-all flex flex-row items-center gap-4 text-left no-underline">
+          <div
+            class="bg-[#E4405F]/10 text-[#E4405F] p-3.5 rounded-xl group-hover:bg-[#E4405F] group-hover:text-white transition-colors">
+            <span class="material-symbols-outlined text-3xl">photo_camera</span>
+          </div>
+          <div class="flex-grow">
+            <h3
+              class="text-headline-md text-on-surface text-lg group-hover:text-primary transition-colors flex items-center justify-between">
+              <span>Instagram (@whitecoatcollective)</span>
+              <span
+                class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-xl">open_in_new</span>
+            </h3>
+            <p class="text-body-md text-on-surface-variant text-sm mt-0.5">Follow for event announcements, member
+              spotlights, and study tips.</p>
+          </div>
+        </a>
+
+        <!-- Campus Groups Card -->
+        <a href="https://aggielife.ucdavis.edu/events_list" target="_blank" rel="noopener noreferrer"
+          class="clinical-card group p-5 hover:border-primary transition-all flex flex-row items-center gap-4 text-left no-underline">
+          <div
+            class="bg-primary/10 text-primary p-3.5 rounded-xl group-hover:bg-primary group-hover:text-white transition-colors">
+            <span class="material-symbols-outlined text-3xl">groups</span>
+          </div>
+          <div class="flex-grow">
+            <h3
+              class="text-headline-md text-on-surface text-lg group-hover:text-primary transition-colors flex items-center justify-between">
+              <span>Campus Groups Portal</span>
+              <span
+                class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-xl">open_in_new</span>
+            </h3>
+            <p class="text-body-md text-on-surface-variant text-sm mt-0.5">Official university membership roster, event
+              check-ins, and club registration.</p>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface-container-low py-10 border-t border-outline-variant mt-auto">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-2 text-headline-md font-bold text-on-surface">
+        <span class="material-symbols-outlined text-primary">medical_services</span>
+        <span>White Coat Collective</span>
+      </div>
+      <nav class="flex flex-wrap justify-center gap-6 text-body-md text-on-surface-variant">
+        <a href="about.html" class="hover:text-primary transition-colors">About Us</a>
+        <a href="index.html" class="hover:text-primary transition-colors">Resources</a>
+        <a href="events.html" class="hover:text-primary transition-colors">Events</a>
+        <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+      </nav>
+      <div class="text-caption text-on-surface-variant text-center md:text-right">
+        © 2026 White Coat Collective. Precision in Education.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>
