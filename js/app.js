@@ -90,14 +90,14 @@ function initModalSystem() {
 
   if (!backdrop || !modalBody) return;
 
-  window.openModal = function(title, contentHtml) {
+  window.openModal = function (title, contentHtml) {
     document.getElementById('modal-title').textContent = title;
     modalBody.innerHTML = contentHtml;
     backdrop.classList.add('active');
     document.body.style.overflow = 'hidden';
   };
 
-  window.closeModal = function() {
+  window.closeModal = function () {
     backdrop.classList.remove('active');
     document.body.style.overflow = '';
   };
@@ -166,7 +166,7 @@ function initModalSystem() {
       const title = card ? card.querySelector('h3').textContent : 'Event Registration';
       const sheetUrl = card ? (card.dataset.sheetUrl || '') : '';
       const sheetTarget = card && card.querySelector('div.text-xs span:last-child') ? card.querySelector('div.text-xs span:last-child').textContent : 'Google Sheet';
-      
+
       const formHtml = `
         <p class="text-body-md text-on-surface-variant mb-3">Complete your details to secure your spot for <strong>${title}</strong>.</p>
         
@@ -208,7 +208,7 @@ function initModalSystem() {
         if (rsvpForm) {
           rsvpForm.addEventListener('submit', async (evt) => {
             evt.preventDefault();
-            
+
             const submitBtn = document.getElementById('rsvp-submit-btn');
             if (submitBtn) {
               submitBtn.disabled = true;
@@ -229,7 +229,7 @@ function initModalSystem() {
               academicYear: year,
               timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
               sheetTarget: sheetTarget,
-              sheetUrl: sheetUrl || 'https://script.google.com/macros/s/AKfycbz8B_0KEW1DxpWEJ3il6xkPkAr6XyaW1Nnc5pxjYTHbKktNQUacqHSJBMJ46ZXF9EwG/exec'
+              sheetUrl: sheetUrl || 'https://script.google.com/macros/s/AKfycbzJRhvYMlcvsm9f4ZwOLkMd1eDcWOn1xW1D_7p-nhO2UVJYnmhrKmC1sYzDMbLGDrO0ZA/exec'
             };
 
             // Transmit to Google Sheet Webhook endpoint
@@ -309,9 +309,9 @@ function initSearchAndFilters() {
     filterableItems.forEach(item => {
       const text = item.textContent.toLowerCase();
       const itemCategory = item.dataset.category || '';
-      
+
       const matchesSearch = !query || text.includes(query);
-      const matchesCategory = category === 'all' || itemCategory === category;
+      const matchesCategory = category === 'all' || itemCategory.split(' ').includes(category);
 
       if (matchesSearch && matchesCategory) {
         item.style.display = '';
@@ -334,13 +334,13 @@ function initSearchAndFilters() {
 
       pill.classList.add('active', 'bg-secondary-fixed', 'text-on-secondary-fixed');
       pill.classList.remove('bg-surface', 'text-on-surface-variant', 'border', 'border-outline-variant');
-      
+
       filterItems();
     });
   });
 }
 
-// Forms Handling
+// Forms & Newsletter Handling
 function initForms() {
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
@@ -353,7 +353,7 @@ function initForms() {
 
   const newsletterForm = document.getElementById('newsletter-form');
   if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
+    newsletterForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const emailInput = document.getElementById('newsletter-email');
@@ -409,4 +409,8 @@ function initForms() {
       }, 500);
     });
   }
+    });
+  }
 }
+
+

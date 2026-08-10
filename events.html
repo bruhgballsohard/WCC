@@ -71,8 +71,8 @@
 
       <!-- Desktop Links -->
       <nav class="hidden md:flex gap-8 items-center h-full">
-        <a href="index.html" class="nav-link">Resources Hub</a>
-        <a href="about.html" class="nav-link">About Us</a>
+        <a href="index.html" class="nav-link">About Us</a>
+        <a href="resource.html" class="nav-link">Resources Hub</a>
         <a href="events.html" class="nav-link active">Events</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
@@ -97,8 +97,8 @@
           class="material-symbols-outlined">close</span></button>
     </div>
     <nav class="flex flex-col gap-4">
-      <a href="index.html" class="text-on-surface-variant hover:text-primary">Resources Hub</a>
-      <a href="about.html" class="text-on-surface-variant hover:text-primary">About Us</a>
+      <a href="index.html" class="text-on-surface-variant hover:text-primary">About Us</a>
+      <a href="resource.html" class="text-on-surface-variant hover:text-primary">Resources Hub</a>
       <a href="events.html" class="text-primary font-bold">Events</a>
       <a href="contact.html" class="text-on-surface-variant hover:text-primary">Contact</a>
     </nav>
@@ -126,13 +126,19 @@
           data-category="all">All Events</button>
         <button
           class="filter-pill badge badge-tertiary px-4 py-2 cursor-pointer transition-all border border-outline-variant/40 bg-surface text-on-surface-variant"
-          data-category="workshop">Workshops</button>
+          data-category="fall2026">Fall Quarter 2026</button>
         <button
           class="filter-pill badge badge-tertiary px-4 py-2 cursor-pointer transition-all border border-outline-variant/40 bg-surface text-on-surface-variant"
-          data-category="panel">Panels</button>
+          data-category="academic">Academic</button>
         <button
           class="filter-pill badge badge-tertiary px-4 py-2 cursor-pointer transition-all border border-outline-variant/40 bg-surface text-on-surface-variant"
-          data-category="recurring">Recurring</button>
+          data-category="wellness">Wellness</button>
+        <button
+          class="filter-pill badge badge-tertiary px-4 py-2 cursor-pointer transition-all border border-outline-variant/40 bg-surface text-on-surface-variant"
+          data-category="professional">Professional</button>
+        <button
+          class="filter-pill badge badge-tertiary px-4 py-2 cursor-pointer transition-all border border-outline-variant/40 bg-surface text-on-surface-variant"
+          data-category="speaker">Speaker</button>
       </div>
 
       <div
@@ -146,105 +152,18 @@
     <!-- Events Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
 
-      <!-- Event Card 1 -->
-      <article class="clinical-card filterable-item event-card" data-category="workshop" data-event-id="suture-clinic"
-        data-sheet-url="https://script.google.com/macros/s/AKfycbx_SUTURE_CLINIC_RSVP/exec">
+      <!-- Ochem Study Group -->
+      <article class="clinical-card filterable-item event-card" data-category="fall2026 academic"
+        data-event-id="ochem-study-group"
+        data-sheet-url="https://script.google.com/macros/s/AKfycbx_OCHEM_STUDYGROUP_RSVP/exec">
         <div class="flex justify-between items-start mb-4">
-          <span class="badge badge-primary">Workshop</span>
-          <span class="material-symbols-outlined text-outline">healing</span>
+          <div class="flex items-center gap-2">
+            <span class="badge badge-primary">Academic</span>
+            <span class="badge badge-tertiary">Fall Quarter 2026</span>
+          </div>
+          <span class="material-symbols-outlined text-outline">science</span>
         </div>
-        <h3 class="text-headline-md text-on-surface mb-4">Suture Clinic Workshop</h3>
-        <div class="space-y-2 mb-6 text-body-md text-on-surface-variant flex-grow">
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-lg text-primary">calendar_today</span>
-            <span>October 15, 2024</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-lg text-primary">schedule</span>
-            <span>6:00 PM - 8:00 PM</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-lg text-primary">location_on</span>
-            <span>Biomedical Sciences Bldg, Room 204</span>
-          </div>
-          <div
-            class="flex items-center gap-2 text-xs text-primary font-bold mt-2 pt-2 border-t border-outline-variant/30">
-            <span class="material-symbols-outlined text-sm">table_view</span>
-            <span>Google Sheet: Suture_Clinic_RSVPs</span>
-          </div>
-        </div>
-        <button class="btn-outline w-full btn-register-event">Register</button>
-      </article>
-
-      <!-- Event Card 2 -->
-      <article class="clinical-card filterable-item event-card" data-category="panel" data-event-id="emergency-panel"
-        data-sheet-url="https://script.google.com/macros/s/AKfycbx_EMERGENCY_PANEL_RSVP/exec">
-        <div class="flex justify-between items-start mb-4">
-          <span class="badge badge-secondary">Panel</span>
-          <span class="material-symbols-outlined text-outline">groups</span>
-        </div>
-        <h3 class="text-headline-md text-on-surface mb-4">Guest Panel: Emergency Medicine Residents</h3>
-        <div class="space-y-2 mb-6 text-body-md text-on-surface-variant flex-grow">
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-lg text-primary">calendar_today</span>
-            <span>October 22, 2024</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-lg text-primary">schedule</span>
-            <span>7:00 PM - 9:00 PM</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-lg text-primary">location_on</span>
-            <span>Student Union Auditorium</span>
-          </div>
-          <div
-            class="flex items-center gap-2 text-xs text-primary font-bold mt-2 pt-2 border-t border-outline-variant/30">
-            <span class="material-symbols-outlined text-sm">table_view</span>
-            <span>Google Sheet: ER_Panel_RSVPs</span>
-          </div>
-        </div>
-        <button class="btn-outline w-full btn-register-event">Register</button>
-      </article>
-
-      <!-- Event Card 3 -->
-      <article class="clinical-card filterable-item event-card" data-category="workshop"
-        data-event-id="hospital-volunteer"
-        data-sheet-url="https://script.google.com/macros/s/AKfycbx_VOLUNTEER_ORIENT_RSVP/exec">
-        <div class="flex justify-between items-start mb-4">
-          <span class="badge badge-tertiary">Orientation</span>
-          <span class="material-symbols-outlined text-outline">local_hospital</span>
-        </div>
-        <h3 class="text-headline-md text-on-surface mb-4">Hospital Volunteer Orientation</h3>
-        <div class="space-y-2 mb-6 text-body-md text-on-surface-variant flex-grow">
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-lg text-primary">calendar_today</span>
-            <span>November 5, 2024</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-lg text-primary">schedule</span>
-            <span>9:00 AM - 1:00 PM</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-lg text-primary">location_on</span>
-            <span>City General Hospital, Main Lobby</span>
-          </div>
-          <div
-            class="flex items-center gap-2 text-xs text-primary font-bold mt-2 pt-2 border-t border-outline-variant/30">
-            <span class="material-symbols-outlined text-sm">table_view</span>
-            <span>Google Sheet: Volunteer_RSVPs</span>
-          </div>
-        </div>
-        <button class="btn-outline w-full btn-register-event">Register</button>
-      </article>
-
-      <!-- Event Card 4 -->
-      <article class="clinical-card filterable-item event-card" data-category="recurring" data-event-id="peer-tutoring"
-        data-sheet-url="https://script.google.com/macros/s/AKfycbx_PEER_TUTORING_RSVP/exec">
-        <div class="flex justify-between items-start mb-4">
-          <span class="badge badge-secondary">Recurring</span>
-          <span class="material-symbols-outlined text-outline">school</span>
-        </div>
-        <h3 class="text-headline-md text-on-surface mb-4">Weekly Peer-to-Peer Tutoring</h3>
+        <h3 class="text-headline-md text-on-surface mb-4">Organic Chemistry (O-Chem) Study Group</h3>
         <div class="space-y-2 mb-6 text-body-md text-on-surface-variant flex-grow">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-lg text-primary">calendar_today</span>
@@ -261,7 +180,210 @@
           <div
             class="flex items-center gap-2 text-xs text-primary font-bold mt-2 pt-2 border-t border-outline-variant/30">
             <span class="material-symbols-outlined text-sm">table_view</span>
-            <span>Google Sheet: Tutoring_RSVPs</span>
+            <span>Google Sheet: Ochem_StudyGroup_RSVPs</span>
+          </div>
+        </div>
+        <button class="btn-outline w-full btn-register-event">Register</button>
+      </article>
+
+      <!-- Week 2: Sunday Group Coffee Meetup -->
+      <article class="clinical-card filterable-item event-card" data-category="fall2026 wellness"
+        data-event-id="coffee-meetup"
+        data-sheet-url="https://script.google.com/macros/s/AKfycbx_COFFEE_MEETUP_RSVP/exec">
+        <div class="flex justify-between items-start mb-4">
+          <div class="flex items-center gap-2">
+            <span class="badge badge-secondary">Wellness</span>
+            <span class="badge badge-tertiary">Fall Quarter 2026</span>
+          </div>
+          <span class="material-symbols-outlined text-outline">local_cafe</span>
+        </div>
+        <h3 class="text-headline-md text-on-surface mb-4">Sunday Group Coffee Meetup</h3>
+        <div class="space-y-2 mb-6 text-body-md text-on-surface-variant flex-grow">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">calendar_today</span>
+            <span>Week 2 • October 11, 2026</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">schedule</span>
+            <span>11:00 AM</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">location_on</span>
+            <span>Tomo Tea House</span>
+          </div>
+          <div
+            class="flex items-center gap-2 text-xs text-primary font-bold mt-2 pt-2 border-t border-outline-variant/30">
+            <span class="material-symbols-outlined text-sm">table_view</span>
+            <span>Google Sheet: Coffee_Meetup_RSVPs</span>
+          </div>
+        </div>
+        <button class="btn-outline w-full btn-register-event">Register</button>
+      </article>
+
+      <!-- Week 4: Resume / Clinical Workshop -->
+      <article class="clinical-card filterable-item event-card" data-category="fall2026 professional"
+        data-event-id="resume-workshop"
+        data-sheet-url="https://script.google.com/macros/s/AKfycbx_RESUME_WORKSHOP_RSVP/exec">
+        <div class="flex justify-between items-start mb-4">
+          <div class="flex items-center gap-2">
+            <span class="badge badge-primary">Professional</span>
+            <span class="badge badge-tertiary">Fall Quarter 2026</span>
+          </div>
+          <span class="material-symbols-outlined text-outline">description</span>
+        </div>
+        <h3 class="text-headline-md text-on-surface mb-4">Pre-Med Resume / Clinical Application Workshop</h3>
+        <div class="space-y-2 mb-6 text-body-md text-on-surface-variant flex-grow">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">calendar_today</span>
+            <span>Week 4 • October 25, 2026</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">schedule</span>
+            <span>7:00 PM</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">location_on</span>
+            <span>Wellman 25</span>
+          </div>
+          <div
+            class="flex items-center gap-2 text-xs text-primary font-bold mt-2 pt-2 border-t border-outline-variant/30">
+            <span class="material-symbols-outlined text-sm">table_view</span>
+            <span>Google Sheet: Resume_Workshop_RSVPs</span>
+          </div>
+        </div>
+        <button class="btn-outline w-full btn-register-event">Register</button>
+      </article>
+
+      <!-- Week 5: Guest Physician Panel -->
+      <article class="clinical-card filterable-item event-card" data-category="fall2026 speaker"
+        data-event-id="physician-panel"
+        data-sheet-url="https://script.google.com/macros/s/AKfycbx_PHYSICIAN_PANEL_RSVP/exec">
+        <div class="flex justify-between items-start mb-4">
+          <div class="flex items-center gap-2">
+            <span class="badge badge-secondary">Speaker</span>
+            <span class="badge badge-tertiary">Fall Quarter 2026</span>
+          </div>
+          <span class="material-symbols-outlined text-outline">record_voice_over</span>
+        </div>
+        <h3 class="text-headline-md text-on-surface mb-4">Guest Physician / Med Student Q&A Panel</h3>
+        <div class="space-y-2 mb-6 text-body-md text-on-surface-variant flex-grow">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">calendar_today</span>
+            <span>Week 5 • November 1, 2026</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">schedule</span>
+            <span>7:00 PM</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">location_on</span>
+            <span>Location TBD</span>
+          </div>
+          <div
+            class="flex items-center gap-2 text-xs text-primary font-bold mt-2 pt-2 border-t border-outline-variant/30">
+            <span class="material-symbols-outlined text-sm">table_view</span>
+            <span>Google Sheet: Physician_Panel_RSVPs</span>
+          </div>
+        </div>
+        <button class="btn-outline w-full btn-register-event">Register</button>
+      </article>
+
+      <!-- Week 7: Sunday Hike & Chill -->
+      <article class="clinical-card filterable-item event-card" data-category="fall2026 wellness"
+        data-event-id="group-hike" data-sheet-url="https://script.google.com/macros/s/AKfycbx_GROUP_HIKE_RSVP/exec">
+        <div class="flex justify-between items-start mb-4">
+          <div class="flex items-center gap-2">
+            <span class="badge badge-secondary">Wellness</span>
+            <span class="badge badge-tertiary">Fall Quarter 2026</span>
+          </div>
+          <span class="material-symbols-outlined text-outline">hiking</span>
+        </div>
+        <h3 class="text-headline-md text-on-surface mb-4">Sunday Morning Group Hike & Chill</h3>
+        <div class="space-y-2 mb-6 text-body-md text-on-surface-variant flex-grow">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">calendar_today</span>
+            <span>Week 7 • November 15, 2026</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">schedule</span>
+            <span>9:00 AM</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">location_on</span>
+            <span>Trail in Davis</span>
+          </div>
+          <div
+            class="flex items-center gap-2 text-xs text-primary font-bold mt-2 pt-2 border-t border-outline-variant/30">
+            <span class="material-symbols-outlined text-sm">table_view</span>
+            <span>Google Sheet: Group_Hike_RSVPs</span>
+          </div>
+        </div>
+        <button class="btn-outline w-full btn-register-event">Register</button>
+      </article>
+
+      <!-- Week 8: Admissions Advisor / Healthcare Professional Workshop -->
+      <article class="clinical-card filterable-item event-card" data-category="fall2026 speaker"
+        data-event-id="admissions-workshop"
+        data-sheet-url="https://script.google.com/macros/s/AKfycbx_ADMISSIONS_WORKSHOP_RSVP/exec">
+        <div class="flex justify-between items-start mb-4">
+          <div class="flex items-center gap-2">
+            <span class="badge badge-secondary">Speaker</span>
+            <span class="badge badge-tertiary">Fall Quarter 2026</span>
+          </div>
+          <span class="material-symbols-outlined text-outline">supervisor_account</span>
+        </div>
+        <h3 class="text-headline-md text-on-surface mb-4">Admissions Advisor or Healthcare Professional Workshop</h3>
+        <div class="space-y-2 mb-6 text-body-md text-on-surface-variant flex-grow">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">calendar_today</span>
+            <span>Week 8 • November 22, 2026</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">schedule</span>
+            <span>7:00 PM</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">location_on</span>
+            <span>Location TBD</span>
+          </div>
+          <div
+            class="flex items-center gap-2 text-xs text-primary font-bold mt-2 pt-2 border-t border-outline-variant/30">
+            <span class="material-symbols-outlined text-sm">table_view</span>
+            <span>Google Sheet: Admissions_Workshop_RSVPs</span>
+          </div>
+        </div>
+        <button class="btn-outline w-full btn-register-event">Register</button>
+      </article>
+
+      <!-- Week 10: Social De-Stress Session -->
+      <article class="clinical-card filterable-item event-card" data-category="fall2026 wrap-up"
+        data-event-id="destress-review"
+        data-sheet-url="https://script.google.com/macros/s/AKfycbx_DESTRESS_REVIEW_RSVP/exec">
+        <div class="flex justify-between items-start mb-4">
+          <div class="flex items-center gap-2">
+            <span class="badge badge-tertiary">Wrap-Up</span>
+            <span class="badge badge-secondary">Fall Quarter 2026</span>
+          </div>
+          <span class="material-symbols-outlined text-outline">celebration</span>
+        </div>
+        <h3 class="text-headline-md text-on-surface mb-4">Social De-Stress Session & Quarter Review</h3>
+        <div class="space-y-2 mb-6 text-body-md text-on-surface-variant flex-grow">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">calendar_today</span>
+            <span>Week 10 • December 6, 2026</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">schedule</span>
+            <span>7:00 PM</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">location_on</span>
+            <span>Wellman 25</span>
+          </div>
+          <div
+            class="flex items-center gap-2 text-xs text-primary font-bold mt-2 pt-2 border-t border-outline-variant/30">
+            <span class="material-symbols-outlined text-sm">table_view</span>
+            <span>Google Sheet: DeStress_Review_RSVPs</span>
           </div>
         </div>
         <button class="btn-outline w-full btn-register-event">Register</button>
@@ -358,8 +480,8 @@
         <span>White Coat Collective</span>
       </div>
       <nav class="flex flex-wrap justify-center gap-6 text-body-md text-on-surface-variant">
-        <a href="about.html" class="hover:text-primary transition-colors">About Us</a>
-        <a href="index.html" class="hover:text-primary transition-colors">Resources</a>
+        <a href="index.html" class="hover:text-primary transition-colors">About Us</a>
+        <a href="resource.html" class="hover:text-primary transition-colors">Resources</a>
         <a href="events.html" class="hover:text-primary transition-colors">Events</a>
         <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
       </nav>
