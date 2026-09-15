@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UCD Pre-Med Calendar - White Coat Collective</title>
+  <meta name="description"
+    content="Official UC Davis Pre-Med Calendar. Real-time schedule for clinical workshops, physician panels, MCAT review sessions, and pre-med events." />
+  <link rel="canonical" href="calendar.html" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#005da7',
+            'primary-container': '#2976c7',
+            'primary-fixed': '#d4e3ff',
+            'primary-fixed-dim': '#a4c9ff',
+            'on-primary': '#ffffff',
+            'on-primary-fixed': '#001c39',
+            secondary: '#406183',
+            'secondary-fixed': '#d0e4ff',
+            'on-secondary-fixed': '#001d35',
+            tertiary: '#465d81',
+            'tertiary-fixed': '#d5e3ff',
+            surface: '#f8f9fa',
+            'surface-container': '#edeeef',
+            'surface-container-low': '#f3f4f5',
+            'surface-container-lowest': '#ffffff',
+            'on-surface': '#191c1d',
+            'on-surface-variant': '#414751',
+            outline: '#717783',
+            'outline-variant': '#c1c7d3',
+          },
+          fontFamily: {
+            display: ['"Hanken Grotesk"', 'sans-serif'],
+            headline: ['"Hanken Grotesk"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col">
+
+  <!-- Navigation Header -->
+  <header class="header-nav bg-surface-container-lowest border-b border-outline-variant sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 h-20 flex justify-between items-center">
+      <a href="index.html"
+        class="flex items-center gap-2 text-headline-md font-bold text-on-surface hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-primary text-3xl"
+          style="font-variation-settings: 'FILL' 1;">medical_services</span>
+        <span>White Coat Collective</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex gap-8 items-center h-full">
+        <a href="index.html" class="nav-link">About Us</a>
+        <a href="events.html" class="nav-link">Events</a>
+        <a href="calendar.html" class="nav-link active">Pre-Med Calendar</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="hidden md:flex items-center gap-3">
+        <a href="https://calendar.google.com/calendar/r?cid=ucdwhitecoatcollective@gmail.com" target="_blank"
+          rel="noopener" class="btn-outline text-xs py-2 px-3 flex items-center gap-1.5" title="Add to Google Calendar">
+          <span class="material-symbols-outlined text-base">event</span>
+          <span>Sync GCal</span>
+        </a>
+        <a href="contact.html" class="btn-primary py-2 px-4 text-xs">Join Collective</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-on-surface p-2 mobile-menu-btn" aria-label="Toggle Navigation">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <aside id="mobile-drawer" class="mobile-drawer">
+    <div class="flex justify-between items-center pb-4 border-b border-outline-variant">
+      <span class="font-headline text-lg font-bold text-on-surface">Menu</span>
+      <button id="close-drawer-btn" class="text-outline p-1"><span
+          class="material-symbols-outlined">close</span></button>
+    </div>
+    <nav class="flex flex-col gap-4">
+      <a href="index.html" class="text-on-surface-variant hover:text-primary">About Us</a>
+      <a href="events.html" class="text-on-surface-variant hover:text-primary">Events</a>
+      <a href="calendar.html" class="text-primary font-bold">Pre-Med Calendar</a>
+      <a href="contact.html" class="text-on-surface-variant hover:text-primary">Contact</a>
+    </nav>
+    <div class="mt-auto pt-4 border-t border-outline-variant flex flex-col gap-3">
+      <a href="https://calendar.google.com/calendar/r?cid=ucdwhitecoatcollective@gmail.com" target="_blank"
+        rel="noopener" class="btn-outline w-full text-center py-2.5 text-xs flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">event</span>
+        <span>Add to Google Calendar</span>
+      </a>
+      <a href="contact.html" class="btn-primary w-full text-center">Join the Collective</a>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="flex-grow w-full max-w-7xl mx-auto px-6 md:px-12 py-10 md:py-16">
+
+    <!-- Hero Header -->
+    <div class="mb-10">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-outline-variant/60">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="badge badge-primary">UC Davis Pre-Health Community</span>
+            <span class="badge badge-tertiary">Official Master Schedule</span>
+          </div>
+          <h1 class="text-display text-on-surface mb-3">UCD Pre-Med Calendar</h1>
+          <p class="text-body-lg text-on-surface-variant max-w-3xl">
+            Live master schedule for UC Davis pre-medical events, clinical workshops, physician panels, and White Coat Collective sessions.
+          </p>
+        </div>
+
+        <!-- Quick Sync Action Group -->
+        <div class="flex flex-wrap items-center gap-3 shrink-0">
+          <a href="https://calendar.google.com/calendar/r?cid=ucdwhitecoatcollective@gmail.com" target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary py-2.5 px-4 flex items-center gap-2 text-xs font-semibold shadow-sm hover:shadow-md transition-shadow">
+            <span class="material-symbols-outlined text-base">calendar_add_on</span>
+            <span>Subscribe on Google Calendar</span>
+          </a>
+          <a href="https://calendar.google.com/calendar/ical/ucdwhitecoatcollective%40gmail.com/public/basic.ics"
+            download="ucd-premed-calendar.ics"
+            class="btn-outline py-2.5 px-4 flex items-center gap-2 text-xs font-semibold hover:bg-surface-container-low transition-colors">
+            <span class="material-symbols-outlined text-base">download</span>
+            <span>Download iCal (.ics)</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Embedded Google Calendar -->
+    <section class="mb-16">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span class="material-symbols-outlined text-primary text-2xl"
+              style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+            <h2 class="text-headline-lg text-on-surface">Interactive Google Calendar</h2>
+          </div>
+          <p class="text-body-md text-on-surface-variant">
+            Live schedule synced in real-time. View events by Month, Week, or Agenda view.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3 text-xs text-on-surface-variant">
+          <span class="inline-flex items-center gap-1.5 bg-surface-container-low px-3 py-1.5 rounded-lg border border-outline-variant/40">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Live Sync: <strong>ucdwhitecoatcollective@gmail.com</strong></span>
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-surface-container-low px-3 py-1.5 rounded-lg border border-outline-variant/40">
+            <span class="material-symbols-outlined text-sm text-outline">schedule</span>
+            <span>America/Los Angeles (PT)</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Calendar Frame Wrapper -->
+      <div class="calendar-wrapper">
+        <div class="bg-surface-container px-4 py-2.5 border-b border-outline-variant/40 flex items-center justify-between text-xs text-on-surface-variant">
+          <div class="flex items-center gap-2 font-medium">
+            <span class="material-symbols-outlined text-primary text-sm">info</span>
+            <span>Click any event on the calendar below to see details, location, and updates.</span>
+          </div>
+          <a href="https://calendar.google.com/calendar/embed?src=ucdwhitecoatcollective%40gmail.com&ctz=America%2FLos_Angeles"
+            target="_blank" rel="noopener noreferrer"
+            class="hidden sm:inline-flex items-center gap-1 text-primary hover:underline font-semibold">
+            <span>Open in Full Tab</span>
+            <span class="material-symbols-outlined text-xs">open_in_new</span>
+          </a>
+        </div>
+
+        <!-- Google Calendar Embed Iframe -->
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=ucdwhitecoatcollective%40gmail.com&ctz=America%2FLos_Angeles"
+          class="calendar-frame"
+          style="border: 0"
+          width="100%"
+          height="680"
+          frameborder="0"
+          scrolling="no"
+          title="UCD Pre-Med Calendar Google Embed">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Pre-Med Calendar Synchronizing Guide -->
+    <section class="bg-surface-container-lowest border border-outline-variant/60 rounded-2xl p-6 md:p-10 shadow-sm mb-12">
+      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 mb-8 pb-6 border-b border-outline-variant/40">
+        <div>
+          <span class="badge badge-secondary mb-2">Student Guide</span>
+          <h2 class="text-headline-lg text-on-surface mb-2">How to Sync the UCD Pre-Med Calendar to Your Phone</h2>
+          <p class="text-body-md text-on-surface-variant max-w-2xl">
+            Never miss an event, clinical workshop, or guest lecture. Connect our master Google Calendar feed with your personal device.
+          </p>
+        </div>
+        <div class="flex gap-3 shrink-0">
+          <a href="https://calendar.google.com/calendar/r?cid=ucdwhitecoatcollective@gmail.com" target="_blank"
+            rel="noopener noreferrer" class="btn-primary py-2.5 px-4 text-xs">
+            Open in Google Calendar
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/40">
+          <div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm mb-3">1</div>
+          <h4 class="font-bold text-on-surface mb-1">Google Calendar App</h4>
+          <p class="text-xs text-on-surface-variant leading-relaxed">
+            Click <strong>Subscribe on Google Calendar</strong>. When prompted, select <em>"Add Calendar"</em> to sync all updates automatically to your Google account.
+          </p>
+        </div>
+
+        <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/40">
+          <div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm mb-3">2</div>
+          <h4 class="font-bold text-on-surface mb-1">Apple Calendar (iPhone & Mac)</h4>
+          <p class="text-xs text-on-surface-variant leading-relaxed">
+            Download the <strong>.ics file</strong> or tap to subscribe in Apple Calendar to receive push notifications for upcoming pre-med dates.
+          </p>
+        </div>
+
+        <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/40">
+          <div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm mb-3">3</div>
+          <h4 class="font-bold text-on-surface mb-1">Outlook & Canvas</h4>
+          <p class="text-xs text-on-surface-variant leading-relaxed">
+            Use <em>Subscribe from Web</em> in Outlook or overlay alongside your course schedule to keep track of key quarterly dates.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface-container-low py-10 border-t border-outline-variant mt-auto">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-2 text-headline-md font-bold text-on-surface">
+        <span class="material-symbols-outlined text-primary">medical_services</span>
+        <span>White Coat Collective</span>
+      </div>
+      <nav class="flex flex-wrap justify-center gap-6 text-body-md text-on-surface-variant">
+        <a href="index.html" class="hover:text-primary transition-colors">About Us</a>
+        <a href="events.html" class="hover:text-primary transition-colors">Events</a>
+        <a href="calendar.html" class="hover:text-primary transition-colors">Pre-Med Calendar</a>
+        <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+      </nav>
+      <div class="text-caption text-on-surface-variant text-center md:text-right">
+        © 2026 White Coat Collective. Precision in Education.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>

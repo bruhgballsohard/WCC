@@ -73,6 +73,7 @@
       <nav class="hidden md:flex gap-8 items-center h-full">
         <a href="index.html" class="nav-link">About Us</a>
         <a href="events.html" class="nav-link active">Events</a>
+        <a href="calendar.html" class="nav-link">Pre-Med Calendar</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
@@ -98,6 +99,7 @@
     <nav class="flex flex-col gap-4">
       <a href="index.html" class="text-on-surface-variant hover:text-primary">About Us</a>
       <a href="events.html" class="text-primary font-bold">Events</a>
+      <a href="calendar.html" class="text-on-surface-variant hover:text-primary">Pre-Med Calendar</a>
       <a href="contact.html" class="text-on-surface-variant hover:text-primary">Contact</a>
     </nav>
     <div class="mt-auto pt-4 border-t border-outline-variant">
@@ -114,6 +116,21 @@
       <h1 class="text-display text-on-surface mb-3">Upcoming Events</h1>
       <p class="text-body-lg text-on-surface-variant max-w-2xl">Join our collective for hands-on workshops, physician
         panels, and community orientation events designed to prepare you for clinical success.</p>
+    </div>
+
+    <!-- Calendar Promo Banner -->
+    <div class="mb-8 bg-primary-fixed/30 border border-primary-fixed-dim rounded-2xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-3xl">calendar_month</span>
+        <div>
+          <h3 class="text-headline-md text-on-primary-fixed font-bold">Looking for the live synchronized schedule?</h3>
+          <p class="text-sm text-on-surface-variant">Check our official UCD Pre-Med Calendar with embedded Google Calendar and room updates.</p>
+        </div>
+      </div>
+      <a href="calendar.html" class="btn-primary shrink-0 text-xs py-2.5 px-4 flex items-center gap-1.5">
+        <span>View Pre-Med Calendar</span>
+        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </a>
     </div>
 
     <!-- Filters & Controls Area -->
@@ -149,6 +166,43 @@
 
     <!-- Events Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+
+      <!-- =========================================================================
+           EVENT CARD TEMPLATE (Copy & paste this block to announce a new event)
+           - data-category: Space-separated categories matching filter buttons (e.g. "fall2026 academic", "wellness", "professional", "speaker")
+           - data-sheet-url: Optional Google Sheets Apps Script Webhook URL for RSVPs
+           - Badges: badge-primary (dark blue), badge-secondary (slate blue), badge-tertiary (light blue)
+           - Icon: Any Material Symbols Outlined icon name (e.g., science, groups, school, volunteer_activism, record_voice_over)
+           ========================================================================= -->
+      <!--
+      <article class="clinical-card filterable-item event-card" data-category="fall2026 academic"
+        data-event-id="your-event-id"
+        data-sheet-url="">
+        <div class="flex justify-between items-start mb-4">
+          <div class="flex items-center gap-2">
+            <span class="badge badge-primary">Academic</span>
+            <span class="badge badge-tertiary">Fall Quarter 2026</span>
+          </div>
+          <span class="material-symbols-outlined text-outline">school</span>
+        </div>
+        <h3 class="text-headline-md text-on-surface mb-4">New Event Title</h3>
+        <div class="space-y-2 mb-6 text-body-md text-on-surface-variant flex-grow">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">calendar_today</span>
+            <span>Date Here (e.g., October 24th)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">schedule</span>
+            <span>Time Here (e.g., 5:00 PM - 6:30 PM)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg text-primary">location_on</span>
+            <span>Location Here (e.g., Wellman Hall 126 or Zoom)</span>
+          </div>
+        </div>
+        <button class="btn-outline w-full btn-register-event">Register</button>
+      </article>
+      -->
 
       <!-- Ochem Study Group -->
       <article class="clinical-card filterable-item event-card" data-category="fall2026 academic"
@@ -315,6 +369,7 @@
       <nav class="flex flex-wrap justify-center gap-6 text-body-md text-on-surface-variant">
         <a href="index.html" class="hover:text-primary transition-colors">About Us</a>
         <a href="events.html" class="hover:text-primary transition-colors">Events</a>
+        <a href="calendar.html" class="hover:text-primary transition-colors">Pre-Med Calendar</a>
         <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
       </nav>
       <div class="text-caption text-on-surface-variant text-center md:text-right">
